@@ -1,0 +1,25 @@
+{
+  "name": "chaining",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.53",
+    "@babel/core": "^7.0.0-beta.53",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0-beta.53",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0-beta.53",
+    "@babel/preset-env": "^7.0.0-beta.53",
+    "concurrently": "^3.6.0",
+    "nodemon": "^1.18.1",
+    "watch": "^1.0.2"
+  },
+  "scripts": {
+    "babel": "babel -d dist src/*",
+    "watch": "watch \"yarn babel\" src",
+    "dev": "concurrently \"yarn watch\" \"nodemon dist/analyzer.js\""
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "node-fetch": "^2.2.0"
+  }
+}
